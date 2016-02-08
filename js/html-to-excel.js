@@ -21,10 +21,6 @@ $(function() {
 		}
 	}
 	
-	$("#textoutput").click(function() {
-		selectText('textoutput');
-	});
-
 	$(".enter-btn").click(function(e) {
 		e.preventDefault();
 		var textInput = $(".textinput").val();
@@ -32,15 +28,18 @@ $(function() {
 		$(".row-2").html(textInput);
 	});
 	
-	$(".clear-btn").click(function(e) {
-		e.preventDefault();
-		$(".textinput").val("");
-		$(".row-2").text("");
+	$(".select-output-btn").click(function() {
+		selectText('textoutput');
 	});
 	
 	$(".export-btn").click(function(e) {
 		window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('#textoutput').html()));
 		e.preventDefault();
 	});
-
+	
+	$(".clear-btn").click(function(e) {
+		e.preventDefault();
+		$(".textinput").val("");
+		$(".row-2").text("");
+	});
 })
